@@ -24,5 +24,49 @@
         </div>
       </section>
     </header>
+    <main>
+      <form>
+        <label for="nomesobrenome">Nome e sobrenome</label>
+        <input type="text" id="nomesobrenome" />
+
+        <label for="email">Email</label>
+        <input type="text" id="email" />
+
+        <label for="telefone">Telefone</label>
+        <input type="text" id="telefone" />
+
+        <label for="mensagem">Mensagem</label>
+        <textarea name="mensagem" id="mensagem" cols="60" rows="10"></textarea>
+
+        <div>
+          <label for="radio-email">Email</label>
+          <input type="radio" name="contato" value="email" id="radio-email" />
+          <label for="radio-telefone">Telefone</label>
+          <input
+            type="radio"
+            name="contato"
+            value="telefone"
+            id="radio-telefone"
+          />
+          <label for="radio-whatsapp">WhatsApp</label>
+          <input
+            type="radio"
+            name="contato"
+            value="whatsapp"
+            id="radio-whatsapp"
+          />
+        </div>
+
+        <label
+          ><input type="checkbox" />Gostaria de receber nossas novidades por
+          email?</label
+        >
+        <input type="submit" name="contato" value="Enviar formulário" />
+      </form>
+    </main>
   </body>
+  <footer>
+    <img src="logo-branco.png" alt="foto-do-rodape" />
+    <p>&copy; Copyright Barbearia Alura - 2019</p>
+  </footer>
 </html>
