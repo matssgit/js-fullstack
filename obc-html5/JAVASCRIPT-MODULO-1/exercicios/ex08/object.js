@@ -20,7 +20,7 @@ do {
 			property.garagem = prompt("Possui garagem? (Sim / Não) ");
 
 			const confirmation = confirm(`
-                Salvar este imóvel?
+                Salvar este imóvel?\n
                 Proprietário: ${property.nome}
                 Quartos: ${property.quartos}
                 Banheiros: ${property.banheiros}
