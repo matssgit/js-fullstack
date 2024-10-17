@@ -1,22 +1,18 @@
 body {
 	background-color: #000;
+	color: #f6f6f6;
+}
+
+strong {
+	color: #22d4fd;
 }
 
 h1 {
-	color: white;
-	/* Adicionar mais estilos conforme necessário */
+	font-weight: bold;
 }
-p {
-	color: white;
-	/* Adicionar mais estilos conforme necessário */
+
+span {
+	color: #22d4fd;
+	border: 1px solid #22d4fd;
+	padding: 10px;
 }
-button {
-	background-color: ciano;
-	color: white;
-	border: none;
-	/* Adicionar mais estilos conforme necessário */
-}
-img {
-	/* Adicionar estilos para formatar a imagem */
-}
-/* Adicionar mais estilos conforme necessário */
