@@ -1,87 +1,173 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Pizzaria Alessio's</title>
+		<title>Alessio's Pizzaria</title>
 		<link rel="stylesheet" href="style.css" />
 	</head>
+
 	<body>
 		<header>
 			<nav>
-				<ul class="menu">
-					<li>Home</li>
-					<li>Cardápio</li>
-					<li>Sobre Nós</li>
-					<li>Contato</li>
+				<ul>
+					<li><a href="#home">Home</a></li>
+					<li><a href="#menu">Cardápio</a></li>
+					<li><a href="#about">Sobre Nós</a></li>
+					<li><a href="#contact">Contato</a></li>
 				</ul>
 			</nav>
-			<div class="welcome">
-				<h1>Bem-vindo á Alessio's</h1>
-				<p>Saborosas pizzas feitas especialmente para você!</p>
-				<img
-					src="pexels-narda-yescas-1566837.jpg"
-					alt="foto da pizza a lenha" />
-                <button class="button">Ver Cardápio</button>
-			</div>
 		</header>
-		<section>
+
+		<section id="home">
+			<div class="hero">
+				<h1>Bem-vindo à Alessio's</h1>
+				<p>Saborosas pizzas feitas especialmente para você!</p>
+				<a href="#menu" class="cta-button">Ver Cardápio</a>
+			</div>
+		</section>
+
+		<section id="menu">
 			<h2>Cardápio</h2>
-			<ul class="block-1">
-				<li class="cards">
-					Pizza Marguerita</li>
-				<li class="cards">Pizza Pepperoni</li>
-				<li class="cards">Pizza Quatro Queijos</li>
-			</ul>
-			<ul class="block-2">
-				<li class="cards">Pizza Calabresa</li>
-				<li class="cards">Pizza Vegetariana</li>
-				<li class="cards">Pizza Frango com Catupiry</li>
-			</ul>
-			<ul class="block-3">
-				<li class="cards">Pizza Portuguesa</li>
-				<li class="cards">Pizza Supreme</li>
-				<li class="cards">Pizza Tropical</li>
-			</ul>
-			<ul class="block-4">
-				<li class="cards">Pizza Margherita especialmente</li>
-				<li class="cards">Pizza Carne e Sol</li>
-				<li class="cards">Pizza Caprese</li>
+			<ul class="menu-list">
+				<li>
+					<img
+						src="img/pexels-engin-akyurt-2260208.jpg"
+						alt="Pizza Margherita" />
+					<h3>Pizza Margherita</h3>
+					<p>Molho de tomate, mussarela, manjericão fresco.</p>
+				</li>
+				<li>
+					<img
+						src="img/pexels-engin-akyurt-2260208.jpg"
+						alt="Pizza Pepperoni" />
+					<h3>Pizza Pepperoni</h3>
+					<p>Molho de tomate, pepperoni, queijo mussarela.</p>
+				</li>
+				<li>
+					<img
+						src="img/pexels-engin-akyurt-2260208.jpg"
+						alt="Pizza Quatro Queijos" />
+					<h3>Pizza Quatro Queijos</h3>
+					<p>Molho de tomate, mussarela, parmesão, gorgonzola, provolone.</p>
+				</li>
+				<li>
+					<img
+						src="img/pexels-engin-akyurt-2260208.jpg"
+						alt="Pizza Calabresa" />
+					<h3>Pizza Calabresa</h3>
+					<p>Molho de tomate, calabresa, cebola, queijo mussarela.</p>
+				</li>
+				<li>
+					<img
+						src="img/pexels-engin-akyurt-2260208.jpg"
+						alt="Pizza Vegetariana" />
+					<h3>Pizza Vegetariana</h3>
+					<p>
+						Molho de tomate, pimentões, cogumelos, azeitonas, queijo mussarela.
+					</p>
+				</li>
+				<li>
+					<img
+						src="img/pexels-engin-akyurt-2260208.jpg"
+						alt="Pizza Frango com Catupiry" />
+					<h3>Pizza Frango com Catupiry</h3>
+					<p>
+						Molho de tomate, frango desfiado, catupiry, milho, queijo mussarela.
+					</p>
+				</li>
+				<li>
+					<img
+						src="img/pexels-engin-akyurt-2260208.jpg"
+						alt="Pizza Portuguesa" />
+					<h3>Pizza Portuguesa</h3>
+					<p>
+						Molho de tomate, presunto, ovos, cebola, azeitonas, queijo
+						mussarela.
+					</p>
+				</li>
+				<li>
+					<img src="img/pexels-engin-akyurt-2260208.jpg" alt="Pizza Supreme" />
+					<h3>Pizza Supreme</h3>
+					<p>
+						Molho de tomate, pepperoni, pimentões, cebola roxa, azeitonas,
+						queijo mussarela.
+					</p>
+				</li>
+				<li>
+					<img src="img/pexels-engin-akyurt-2260208.jpg" alt="Pizza Tropical" />
+					<h3>Pizza Tropical</h3>
+					<p>Molho de tomate, presunto, abacaxi, queijo mussarela.</p>
+				</li>
+				<li>
+					<img
+						src="img/pexels-engin-akyurt-2260208.jpg"
+						alt="Pizza Margherita Especial" />
+					<h3>Pizza Margherita Especial</h3>
+					<p>
+						Molho de tomate, mussarela de búfala, tomate fresco, manjericão,
+						azeite de oliva.
+					</p>
+				</li>
+				<li>
+					<img
+						src="img/pexels-engin-akyurt-2260208.jpg"
+						alt="Pizza Carne de Sol" />
+					<h3>Pizza Carne de Sol</h3>
+					<p>
+						Molho de tomate, carne de sol desfiada, cebola roxa, queijo
+						mussarela.
+					</p>
+				</li>
+				<li>
+					<img src="img/pexels-engin-akyurt-2260208.jpg" alt="Pizza Caprese" />
+					<h3>Pizza Caprese</h3>
+					<p>
+						Molho de tomate, tomate fresco, mussarela de búfala, manjericão,
+						azeite de oliva.
+					</p>
+				</li>
 			</ul>
 		</section>
-		<section>
+
+		<section id="about">
 			<h2>Sobre Nós</h2>
 			<p>
 				Nossa pizzaria é dedicada a criar as melhores pizzas do mundo, com
 				ingredientes frescos e receitas exclusivas.
 			</p>
-			<img src="pexels-eneida-nieves-905847.jpg" alt="" />
 		</section>
-		<section>
+
+		<section id="contact">
 			<h2>Contato</h2>
+
 			<p>Entre em contato conosco para fazer pedidos ou tirar suas dúvidas.</p>
-			<div>
+
+			<address>
 				<p>
-					<strong>Endereço:</strong> <em>
-                        Avenida Onze de Outubro, n.º 123 Centro,
-                        Cidade Qualquer/RJ CEP: 12345-678
-                    </em>
+					<strong>Endereço:</strong>
+					Avenida Onze de Outubro, nº 123<br />
+					Centro, Cidade Qualquer/RJ CEP: 12345-678
 				</p>
-				<p>
-					<strong>Telefone:</strong> <em>(11) 5555-5555</em>
-					<strong>E-mail:</strong> <a href="mailto:contato@alessios.pizza">contato@alessios.pizza</a>
-				</p>
-				<p>
-					<strong>Horário de Funcionamento:</strong>
-					<em>Segunda a SSegunda a Sábado: 11h00 ás 23h00 - Domingo: 16h00 ás 23h00
-				</p>
-                <p>
-                    <button class="button">Peça agora mesmo</button>
-                </p>
-			</div>
+
+				<div>
+					<p><strong>Telefone:</strong> (11) 5555-5555</p>
+					<p>
+						<strong>E-mail:</strong>
+						<a href="mailto:contato@alessios.pizza">contato@alessios.pizza</a>
+					</p>
+				</div>
+
+				<div>
+					<p><strong>Horário de Funcionamento:</strong></p>
+					<p>Segunda a Sábado: 11h00 às 23h00 - Domingo: 16h00 às 23h00</p>
+					<p></p>
+				</div>
+			</address>
 		</section>
-        <footer>
-            <p>&copy; 2023 Alessio's Pizzaria</p>
-        </footer>
+
+		<footer>
+			<p>&copy; 2024 Alessio's Pizzaria</p>
+		</footer>
 	</body>
 </html>

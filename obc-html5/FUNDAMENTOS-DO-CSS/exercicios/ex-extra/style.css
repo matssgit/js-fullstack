@@ -3,113 +3,144 @@
 	padding: 0;
 }
 
-nav {
-	background-color: #232323;
-	color: white;
+:root {
+	--color-primary: #ffa500;
+	--color-dark: #232323;
+	--color-light: #eaeaea;
+	--color-white: #fff;
 }
 
-.menu {
-	text-align: center;
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	font-weight: 600;
-}
-
-.menu li {
-	display: inline-block;
-	margin-left: 2rem;
-	margin: 1rem;
-}
-
-.menu li:hover {
-	color: rgb(216, 205, 205);
-	transition: 0.5s;
-	transform: scale(1.1);
-	cursor: pointer;
-}
-
-.welcome {
-	position: relative;
-	height: 75vh;
-	overflow: hidden;
-	text-align: center;
-}
-
-.welcome img {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-	object-position: center top;
-}
-
-.welcome h1,
-.welcome p,
-.welcome button {
-	position: absolute;
-	width: 100%;
-	left: 50%;
-	transform: translateX(-50%);
-	color: white;
-	padding: 1rem;
-	box-sizing: border-box;
-}
-
-.welcome h1 {
-	top: 20%; /* Ajuste conforme necessário */
-	font-size: 3.5rem;
-	margin: 0; /* Remove qualquer margem padrão */
-	white-space: nowrap; /* Evita a quebra de linha */
-}
-
-.welcome p {
-	top: 30%; /* Ajuste conforme necessário */
-	font-size: 1.3rem;
-	margin: 0; /* Remove qualquer margem padrão */
-	white-space: nowrap; /* Evita a quebra de linha */
-}
-
-.welcome button {
-	position: absolute;
-	width: 12vh;
-	top: 40%;
-	border: none;
-	background-color: #fea400;
-	color: black;
-	font-weight: 600;
-	display: inline-block;
-	border-radius: 0.5rem;
-	font-size: 1rem;
-	margin: 0;
-	white-space: nowrap;
-}
-
-.welcome button:hover {
-	cursor: pointer;
+html {
+	scroll-behavior: smooth;
 }
 
 body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+a {
+	color: var(--color-primary);
+}
+
+header {
+	background-color: var(--color-dark);
+	color: var(--color-white);
+	padding: 1.5rem 0;
+}
+
+nav ul {
+	list-style-type: none;
+	text-align: center;
+}
+
+nav li {
+	display: inline;
+	margin: 0 1.5rem;
+}
+
+nav a {
+	text-decoration: none;
+	font-weight: 700;
+}
+
+.hero {
+	background-image: url(img/pexels-narda-yescas-1566837.jpg);
+	background-size: cover;
+	color: var(--color-white);
+	min-height: 55vh;
+	padding: 10rem 0;
+	text-align: center;
+}
+
+.hero h1 {
+	font-size: 4rem;
+	font-weight: 100;
+}
+
+.hero p {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+.cta-button {
+	display: inline-block;
+	background-color: var(--color-primary);
+	border-radius: 0.5rem;
+	color: var(--color-dark);
+	font-size: 1.25rem;
+	font-weight: 700;
+	padding: 0.75rem 1.5rem;
+	text-decoration: none;
+	margin-top: 1.5rem;
+}
+
+section:not(#home) {
+	padding: 4rem;
 	text-align: center;
 }
 
 h2 {
-	font-family: monospace;
-	font-size: 1.5rem;
-	margin: 2rem;
+	font-size: 3rem;
+	margin-bottom: 1.5rem;
 }
 
-section > ul > li {
+p {
+	font-size: 1.25rem;
+}
+
+.menu-list {
+	list-style: none;
+}
+
+.menu-list > li {
+	background-color: var(--color-light);
+	border-radius: 0.5rem;
+	box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.5);
 	display: inline-block;
+	margin: 1.5rem;
+	height: 28rem;
+	width: 28rem;
+	text-align: left;
 }
 
-.block-1,
-.block-2,
-.block-3,
-.block-4 {
-	margin: 1rem;
+.menu-list img {
+	border-top-left-radius: 0.5rem;
+	border-top-right-radius: 0.5rem;
+	object-fit: cover;
+	width: 100%;
 }
 
-.cards {
+.menu-list h3,
+p {
+	padding: 1rem 1.25rem 0;
+}
+
+#about {
+	background-image: linear-gradient(
+			to bottom,
+			rgba(0, 0, 0, 0),
+			rgba(0, 0, 0, 0.8) 100%
+		),
+		url(img/pexels-eneida-nieves-905847.jpg);
+	background-size: cover;
+	background-position: center;
+	color: var(--color-white);
+}
+
+address {
+	margin: 2rem 0;
+}
+
+address > * {
 	display: inline-block;
-	background-color: #fea400;
-	margin: 2rem;
+	margin: 1.5rem;
+	text-align: left;
+}
+
+footer {
+	background-color: var(--color-dark);
+	color: var(--color-white);
+	text-align: center;
 	padding: 2rem;
 }
