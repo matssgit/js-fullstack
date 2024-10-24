@@ -84,7 +84,6 @@ section:hover {
 	justify-content: center;
 	font-size: 5rem;
 	color: #333;
-	cursor: pointer;
 	transition: background-color 0.3s, transform 0.3s;
 	border-radius: 8px;
 }
