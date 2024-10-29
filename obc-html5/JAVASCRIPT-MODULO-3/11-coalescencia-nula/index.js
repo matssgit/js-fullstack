@@ -1,9 +1,13 @@
-const a = 0; // false
+let a = 0;
 
-const b = null; // false
+let b = a || 42;
 
-const c = "Teste"; // true
+console.log({ a, b });
 
-console.log(a || b || c);
+b = a ?? 42;
 
-console.log(a ?? b ?? c);
+console.log({ a, b });
+
+let c = false ?? 42;
+
+console.log({ c });
