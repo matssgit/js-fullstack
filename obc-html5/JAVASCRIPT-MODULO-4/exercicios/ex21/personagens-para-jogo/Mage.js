@@ -28,18 +28,11 @@ class Mage extends Character {
 
 	heal(target) {
 		const healingPoints = this.magic * 2;
-		target.health = healingPoints;
+		target.health += healingPoints;
 		console.log(
 			`${this.name} curou ${target.name}, aumentando seus pontos de vida em ${healingPoints}.`
 		);
 	}
 }
 
-const mage = new Mage("Mago", 70, 10, 5, 20);
-const char1 = new Character("Guerreiro", 100, 20, 10);
-
-mage.attackCharacter(char1);
-console.log(`Vida do ${char1.name}: ${char1.health}`);
-
-mage.heal(char1);
-console.log(`Vida do ${char1.name} após cura: ${char1.health}`);
+module.exports = Mage;

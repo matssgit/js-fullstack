@@ -27,10 +27,4 @@ class Character {
 	}
 }
 
-const char1 = new Character("Goku", 100, 20, 10);
-const char2 = new Character("Vegeta", 80, 15, 5);
-
-char1.attackCharacter(char2);
-console.log(`Vida do ${char2.name}: ${char2.health}`);
-
 module.exports = Character;

@@ -22,11 +22,4 @@ class Thief extends Character {
 	}
 }
 
-const char1 = new Character("Gohan", 100, 20, 10);
-const thief = new Character("Piccolo", 80, 15, 5);
-
-char1.attackCharacter(thief);
-console.log(`Vida do ${thief.name}: ${thief.health}`);
-
-thief.attackCharacter(char1);
-console.log(`Vida do ${char1.name}: ${char1.health}`);
+module.exports = Thief;
