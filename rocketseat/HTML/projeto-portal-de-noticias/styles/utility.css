@@ -40,16 +40,25 @@ h3 {
   font: inherit;
 }
 
-img {
-  max-width: 100%;
-}
-
 .container {
   max-width: 1280px;
   padding-inline: 32px;
   margin-inline: auto;
 }
 
-main {
-  margin-top: 40px;
+/* utility-first */
+.grid {
+  display: grid;
+}
+
+.grid-flow-col {
+  grid-auto-flow: column;
+}
+
+.grid-cols-2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.gap-16 {
+  gap: 16px;
 }
