@@ -62,3 +62,19 @@ h3 {
 .gap-16 {
   gap: 16px;
 }
+
+.text-2x1 {
+  font: var(--h1);
+}
+
+.text-x1 {
+  font: var(--h2);
+}
+
+.text-lg {
+  font: var(--h3);
+}
+
+.text-sm {
+  font: var(--p);
+}
