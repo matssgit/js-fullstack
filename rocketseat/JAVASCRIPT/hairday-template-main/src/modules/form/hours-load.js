@@ -8,6 +8,11 @@ export function hoursLoad({ date }) {
   // Limpa a lista de horários
   hours.innerHTML = "";
 
+  // Obtém a lista de todos os horários ocupados.
+  const unavailableHours = dailySchedules.map((schedule) => {
+    dayjs(schedule.when).format("HH:mm");
+  });
+
   const opening = openingHours.map((hour) => {
     // Recupera somenta a hora.
     const [scheduleHour] = hour.split(":");
@@ -15,9 +20,11 @@ export function hoursLoad({ date }) {
     // Adiciona a hora na data e verifica se está no passado.
     const isHourPast = dayjs(date).add(scheduleHour, "hour").isBefore(dayjs());
 
+    const anavailable = !unavailableHours.includes(hour) && !isHourPast;
+
     return {
       hour,
-      available: !isHourPast,
+      available: isHourPast,
     };
   });
 
@@ -44,6 +51,7 @@ export function hoursLoad({ date }) {
 
   // Adiciona o evento de cliques nos horários disponíveis.
   hoursClick();
+  console.log(hoursClick);
 }
 
 function hourHeaderAdd(title) {

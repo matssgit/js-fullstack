@@ -16,7 +16,7 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "dist"),
     },
-    port: 3000,
+    port: 3333,
     open: true,
     liveReload: true,
   },
@@ -31,6 +31,10 @@ module.exports = {
         {
           from: path.resolve(__dirname, "src", "assets"),
           to: path.resolve(__dirname, "dist", "src", "assets"),
+        },
+        {
+          from: path.resolve(__dirname, "src", "styles", "index.css"),
+          to: path.resolve(__dirname, "dist", "src", "styles"),
         },
       ],
     }),

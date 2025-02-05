@@ -1,6 +1,6 @@
 .form {
   grid-area: form;
-  max-width: 512px;
+  max-width: 100%;
 
   background-color: #232225;
   border-radius: 0.75rem;
@@ -11,7 +11,7 @@
   display: flex;
   flex-direction: column;
 
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .form > header {
@@ -22,16 +22,17 @@
 .form > header h1 {
   font-size: 1.5rem;
   font-weight: 700;
+  color: #e1e1e1;
 }
 
 .form > header p {
-  color: #98959d;
+  color: #e1e1e1;
   font-size: 0.87rem;
 }
 
 .label {
   font-size: 1rem;
-  color: #b2afb6;
+  color: #e1e1e1;
   font-weight: 700;
 }
 
@@ -57,7 +58,7 @@
   font-family: "Catamaran", sans-serif;
 
   font-size: 1rem;
-  color: #b2afb6;
+  color: #e1e1e1;
   background-color: transparent;
 
   outline: none;
@@ -81,6 +82,8 @@
   cursor: pointer;
 
   transition: background-color 0.3s;
+  position: relative;
+  z-index: 10;
 }
 
 .button:hover {
@@ -120,14 +123,14 @@
 
 .hour-period {
   width: 100%;
-  color: #98959d;
+  color: #e1e1e1;
   font-size: 0.87rem;
 
   margin-top: 0.75rem;
 }
 
 .hour-available {
-  background-color: #2e2c30;
+  background-color: #67676775;
 }
 
 .hour-unavailable {

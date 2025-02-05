@@ -22,39 +22,41 @@
 }
 
 body {
-  background-color: #19181b;
-  color: #f5f4f5;
+  margin: 0;
+  height: 100vh; /* Certifica-se de que a altura ocupe a tela toda */
+  display: flex;
+  justify-content: center; /* Centraliza o conteúdo */
+  align-items: center;
+  background-color: #1f1d1d; /* Fundo mais escuro (ou o que preferir) */
 }
 
 .container {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  grid-template-rows: calc(100vh - 1.5rem);
-  grid-template-areas: "form schedule";
-
-  padding: 0.75rem;
+  width: 100%; /* Garantir que a largura ocupe a tela toda */
+  height: 100%; /* Garantir que a altura ocupe a tela toda */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo {
   position: absolute;
-  top: 0;
-  left: 0;
-
+  top: 1rem; /* Distância do topo */
+  left: 50%; /* Para centralizar horizontalmente */
+  transform: translateX(-50%); /* Corrige o alinhamento */
   background-color: #2e2c30;
   padding: 0.75rem 1.25rem;
   border-bottom-right-radius: 0.75rem;
-
   height: 3.5rem;
   width: 8.7rem;
 }
 
 @media (max-width: 1100px) {
   :root {
-    font-size: 14px;
+    font-size: 14px; /* Reduz o tamanho da fonte em telas pequenas */
   }
 
   .container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Ajusta o layout para coluna */
   }
 }
