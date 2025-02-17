@@ -1,0 +1,13 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node --watch src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "author": "Matheus Santana",
+  "license": "ISC",
+  "type": "module",
+  "description": "Meu primeiro projeto Node.js"
+}
