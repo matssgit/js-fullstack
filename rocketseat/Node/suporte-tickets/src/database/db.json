@@ -1,0 +1,22 @@
+{
+  "tickets": [
+    {
+      "id": "67371ec1-bb44-49fa-930c-d4fcc8ed6008",
+      "equipment": "Computador",
+      "description": "Computador não liga.",
+      "user_name": "Matheus Santana",
+      "status": "closed",
+      "created_at": "2025-02-23T01:03:49.095Z",
+      "updated_at": "2025-02-23T01:03:49.095Z"
+    },
+    {
+      "id": "980885a6-3524-420a-805e-c7221ed6b0c6",
+      "equipment": "Teclado",
+      "description": "A tecla de espaço não funciona.",
+      "user_name": "Mari Lonve",
+      "status": "open",
+      "created_at": "2025-02-23T01:43:55.614Z",
+      "updated_at": "2025-02-23T01:43:55.614Z"
+    }
+  ]
+}
