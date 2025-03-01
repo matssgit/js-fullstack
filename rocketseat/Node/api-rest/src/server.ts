@@ -15,10 +15,12 @@ app.use(routes);
  * 500 (Internal Server Error): Erro interno do servidor.
  */
 
-app.use((error: any, request: Request, response: Response, _: NextFunction) => {
-  if (error instanceof AppError) {
-    return response.status(error.statusCode).json({ message: error.message });
+app.use(
+  (error: any, request: Request, response: Response, next: NextFunction) => {
+    if (error instanceof AppError) {
+      return response.status(error.statusCode).json({ message: error.message });
+    }
+    response.status(500).json({ message: error.message });
   }
-  response.status(500).json({ message: error.message });
-});
+);
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));
