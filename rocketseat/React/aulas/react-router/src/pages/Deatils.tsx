@@ -6,7 +6,7 @@ export function Details() {
 
   return (
     <div>
-      <button type="button" onClick={() => navigate("/products")}>
+      <button type="button" onClick={() => navigate(-1)}>
         Voltar
       </button>
 
