@@ -3,13 +3,14 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
 import { differenceInSeconds } from "date-fns";
+import { createContext } from "react";
 
 import {
   HomeContainer,
   StartCountdownButton,
   StopCountdownButton,
 } from "./styles";
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { NewCycleForm } from "../NewCycleForm";
 import { Countdown } from "../Countdown";
 
@@ -23,6 +24,12 @@ interface Cycle {
   interruptedDate?: Date;
   finishedDate?: Date;
 }
+
+interface CyclesContextType {
+  activeCyle: Cycle | undefined;
+}
+
+export const CyclesContext = createContext({} as CyclesContextType);
 
 export function Home() {
   const [cycles, setCycles] = useState<Cycle[]>([]);
@@ -81,12 +88,11 @@ export function Home() {
   return (
     <HomeContainer>
       <form onSubmit={handleSubmit(handleCreateNewCycle)} action="">
-        <NewCycleForm />
-        <Countdown
-          activeCycle={activeCycle}
-          setCycles={setCycles}
-          activeCycleId={activeCycleId}
-        />
+        <CyclesContext.Provider value={{ activeCyle }}>
+          <NewCycleForm />
+          <Countdown
+
+        </CyclesContext.Provider>
 
         {activeCycle ? (
           <StopCountdownButton onClick={handleInterruptCycle} type="button">
