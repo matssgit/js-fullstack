@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cebola Barber - Agendamento</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/barbershop/styles/index.css" />
+  </head>
+  <body>
+    <section class="main-container">
+      <header>
+        <div class="nav-left">
+          <img
+            src="/barbershop/assets/cebola.png"
+            alt="Logo da Cebola Barber"
+            class="logo"
+          />
+          <h1 class="titulo-site">Cebola Barber</h1>
+        </div>
+        <nav class="nav-right" aria-label="Menu principal">
+          <ul id="list">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section id="home" class="hero">
+        <div class="hero-content">
+          <h1>Faça seu Agendamento</h1>
+          <p>Clique no botão abaixo para agendar com a Cebola Barber</p>
+          <a href="#agendamento" class="btn">Agendar Agora!</a>
+        </div>
+        <div class="hero-image" aria-hidden="true"></div>
+      </section>
+    </section>
+
+    <!-- Seção de horários e contato -->
+    <section id="row" class="row">
+      <div class="card flex-grow-1">
+        <div class="table">
+          <div class="table-flex">
+            <h4>Horários de Atendimento</h4>
+            <div class="table-hours">
+              <div class="table-hours-justify-content-between">
+                <span>Seg:</span>
+                <span>10:00 - 15:00</span>
+              </div>
+              <div class="table-hours-justify-content-between">
+                <span>Ter:</span>
+                <span>09:00 - 18:00</span>
+              </div>
+              <div class="table-hours-justify-content-between">
+                <span>Qua:</span>
+                <span>09:00 - 18:00</span>
+              </div>
+              <div class="table-hours-justify-content-between">
+                <span>Qui:</span>
+                <span>09:00 - 19:00</span>
+              </div>
+              <div class="table-hours-justify-content-between">
+                <span>Sex:</span>
+                <span>10:00 - 21:00</span>
+              </div>
+              <div class="table-hours-justify-content-between">
+                <span>Sab:</span>
+                <span>09:00 - 18:00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tel-container">
+          <div class="card-tel">
+            <h4>Telefones</h4>
+            <div class="tel-flex">
+              <span>(13) 99154-2274</span>
+              <button type="button" class="btn-ctt">opções</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
