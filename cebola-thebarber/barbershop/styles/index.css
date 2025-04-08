@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
 :root {
   --primary-color: #d4af37;
@@ -32,6 +32,7 @@ body {
   width: 90%;
   max-width: 1200px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
 }
 
 /* Header */
@@ -40,6 +41,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px 20px 20px;
+  position: relative;
 }
 
 .nav-left {
@@ -58,10 +60,20 @@ header {
 
 .titulo-site {
   font-family: "Lobster", cursive;
-  font-size: 3rem; /* Aumenta o tamanho da fonte */
-  letter-spacing: 0.15em; /* Aumenta o espaçamento entre as letras */
+  font-size: 3rem;
+  letter-spacing: 0.15em;
   color: #333;
   margin: 0;
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: var(--secondary-color);
+  cursor: pointer;
+  z-index: 999;
 }
 
 .nav-right {
@@ -92,6 +104,70 @@ nav ul li a:hover {
   border-radius: 4px;
 }
 
+span {
+  font-style: italic;
+  font-weight: 300;
+  margin: 0px 100px 0px 100px;
+  padding: 3px;
+}
+
+/* Menu mobile */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background: var(--background-color);
+    position: absolute;
+    top: 90px;
+    right: 20px;
+    width: 200px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    border-radius: 8px;
+    z-index: 998;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  nav ul li a {
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .titulo-site {
+    text-align: center;
+  }
+
+  .nav-left {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row-information {
+    flex-direction: column;
+  }
+
+  .card-flex {
+    flex: 1 1 100%;
+  }
+}
+
 /* Texto central */
 .hero {
   display: flex;
@@ -102,27 +178,6 @@ nav ul li a:hover {
   gap: 20px;
   animation: fadeIn 4s ease forwards;
   opacity: 0;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-.hero h1 {
-  font-size: 1.5rem;
-  color: var(--secondary-color);
-}
-
-.hero p {
-  font-size: 1rem;
-  color: var(--text-color);
-}
-
-.hero-content {
-  flex: 1;
-  max-width: 50%;
 }
 
 .hero-image {
@@ -147,6 +202,7 @@ nav ul li a:hover {
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn:hover {
@@ -155,27 +211,98 @@ nav ul li a:hover {
   transition: all 0.3s ease-in-out;
 }
 
+.container {
+  display: block;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 15px 0px 15px;
+  height: 100%;
+}
+
+.row-information {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.d-flex-1 {
+  margin: 24px 0px 24px 0px;
+  padding: 0px 15px 0px 15px;
+}
+
+/* Cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  align-items: stretch;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card-flex {
+  background-color: #f8f5f2;
+  padding: 1.5rem;
+  border-radius: 8px;
+  flex: 1 1 300px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  max-width: 100%;
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Telefone + botão */
+.tel-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+#card-hours-flex {
+  max-width: 800%;
+  width: 100%;
+}
+
 /* Horários e contato */
 .row {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  flex-direction: column;
-  background: var(--primary-color);
+  justify-content: space-between;
+  gap: 1rem;
+  background: var(--text-color);
   padding: 30px;
   margin-top: 1rem;
   border-radius: 4px;
   width: 90%;
   max-width: 1200px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  /* overflow: hidden; */
 }
 
-.table {
+.table-container {
   background: var(--background-color);
   display: inline-block;
-  margin: 24px 0;
+  margin: 24px 0px;
   padding: 0 15px;
   border-radius: 6px;
+  flex: 1;
+  min-width: 300px;
 }
 
 .tel-container {
@@ -191,7 +318,7 @@ nav ul li a:hover {
 }
 
 h4 {
-  margin-bottom: 8px;
+  text-align: center;
   font-size: large;
 }
 
@@ -200,72 +327,27 @@ h4 {
   justify-content: space-between;
 }
 
-.table-container,
-.contact {
-  flex: 1; /* Faz com que as divs cresçam igualmente */
-  min-width: 300px; /* Garante que as divs não fiquem muito estreitas em telas menores */
+.btn-ctt {
+  border: transparent solid 1px;
+  padding: 4px 8px;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-  }
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #25d366;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+  width: fit-content;
+}
 
-  .main-container {
-    padding: 20px;
-  }
-
-  .hero {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-  }
-
-  .hero h1 {
-    font-size: 1.5rem;
-  }
-
-  .hero p {
-    font-size: 0.9rem;
-  }
-
-  .hero-content,
-  .hero-image {
-    max-width: 100%;
-  }
-
-  .hero-image {
-    height: 200px;
-    border-radius: 10px;
-    clip-path: none;
-    background-position: center;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 10px;
-    align-items: center;
-  }
-
-  .logo {
-    margin-right: 0;
-    margin-bottom: 10px;
-  }
-
-  .titulo-site {
-    text-align: center;
-  }
-
-  .nav-left {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .row {
-    flex-direction: column;
-  }
+.whatsapp-btn:hover {
+  background-color: #1ebe5d;
 }

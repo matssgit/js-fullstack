@@ -14,7 +14,13 @@
       href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
     <link rel="stylesheet" href="/barbershop/styles/index.css" />
+    <link rel="stylesheet" href="/barbershop/styles/animations.css" />
   </head>
   <body>
     <section class="main-container">
@@ -27,9 +33,13 @@
           />
           <h1 class="titulo-site">Cebola Barber</h1>
         </div>
+
+        <button class="hamburger" aria-label="Abrir menu">&#9776;</button>
+
         <nav class="nav-right" aria-label="Menu principal">
-          <ul id="list">
+          <ul id="list" class="nav-menu">
             <li><a href="#home">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
             <li><a href="#contato">Contato</a></li>
           </ul>
         </nav>
@@ -39,7 +49,7 @@
         <div class="hero-content">
           <h1>Faça seu Agendamento</h1>
           <p>Clique no botão abaixo para agendar com a Cebola Barber</p>
-          <a href="#agendamento" class="btn">Agendar Agora!</a>
+          <a href="#agendamento" class="btn vibrate">Agendar Agora!</a>
         </div>
         <div class="hero-image" aria-hidden="true"></div>
       </section>
@@ -47,45 +57,45 @@
 
     <!-- Seção de horários e contato -->
     <section id="row" class="row">
-      <div class="card flex-grow-1">
-        <div class="table">
-          <div class="table-flex">
+      <div class="container">
+        <div class="row-information">
+          <!-- Bloco de Horários -->
+          <div class="card-flex" id="card-hours-flex">
             <h4>Horários de Atendimento</h4>
             <div class="table-hours">
               <div class="table-hours-justify-content-between">
-                <span>Seg:</span>
-                <span>10:00 - 15:00</span>
+                <span>Seg:</span><span>10:00 - 15:00</span>
               </div>
               <div class="table-hours-justify-content-between">
-                <span>Ter:</span>
-                <span>09:00 - 18:00</span>
+                <span>Ter:</span><span>09:00 - 18:00</span>
               </div>
               <div class="table-hours-justify-content-between">
-                <span>Qua:</span>
-                <span>09:00 - 18:00</span>
+                <span>Qua:</span><span>09:00 - 18:00</span>
               </div>
               <div class="table-hours-justify-content-between">
-                <span>Qui:</span>
-                <span>09:00 - 19:00</span>
+                <span>Qui:</span><span>09:00 - 19:00</span>
               </div>
               <div class="table-hours-justify-content-between">
-                <span>Sex:</span>
-                <span>10:00 - 21:00</span>
+                <span>Sex:</span><span>10:00 - 21:00</span>
               </div>
               <div class="table-hours-justify-content-between">
-                <span>Sab:</span>
-                <span>09:00 - 18:00</span>
+                <span>Sab:</span><span>09:00 - 18:00</span>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="tel-container">
-          <div class="card-tel">
+          <!-- Bloco de Contato -->
+          <div class="card-flex" id="card-tel-flex">
             <h4>Telefones</h4>
             <div class="tel-flex">
               <span>(13) 99154-2274</span>
-              <button type="button" class="btn-ctt">opções</button>
+              <a
+                href="https://wa.me/5513991542274"
+                target="_blank"
+                class="btn-ctt whatsapp-btn"
+              >
+                <i class="fab fa-whatsapp"></i> WhatsApp
+              </a>
             </div>
           </div>
         </div>
