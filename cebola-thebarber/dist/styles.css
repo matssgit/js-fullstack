@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap");
+
+@import "tailwindcss";
+
+/* seus estilos personalizados depois disso */
+
+:root {
+  --primary-color: #d4af37;
+  --secondary-color: #1a1a1a;
+  --background-color: #f8f5f2;
+  --text-color: #333;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--text-color) url("../../public/assets/cebola-background.jpg")
+    center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}

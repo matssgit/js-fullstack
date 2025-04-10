@@ -1,0 +1,190 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap");
+
+/* seus estilos personalizados depois disso */
+
+:root {
+  --primary-color: #d4af37;
+  --secondary-color: #1a1a1a;
+  --background-color: #f8f5f2;
+  --text-color: #333;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: var(--text-color) url("../assets/cebola-background.jpg")
+    center/cover no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.main-container {
+  @apply flex flex-col bg-zinc-400 p-8 mt-4 rounded w-[90%] max-w-[1200px] shadow-lg box-border;
+}
+
+header {
+  @apply flex justify-between items-center p-5 relative;
+}
+
+.nav-left {
+  @apply flex items-center flex-1;
+}
+
+.logo {
+  @apply w-[120px] h-auto rounded-lg shadow-lg mr-4;
+}
+
+.titulo-site {
+  font-family: "Lobster", cursive;
+  @apply text-5xl tracking-widest text-zinc-800 m-0;
+}
+
+.hamburger {
+  @apply hidden bg-transparent border-none text-2xl text-zinc-800 cursor-pointer z-[999];
+}
+
+.nav-right {
+  @apply flex-1 flex justify-end;
+}
+
+nav ul {
+  @apply flex gap-[100px] list-none p-0 m-0 flex-wrap;
+}
+
+nav ul li a {
+  @apply no-underline text-zinc-800 font-semibold transition-colors duration-300;
+}
+
+nav ul li a:hover {
+  @apply text-[var(--primary-color)] border-b-[5px] border-[var(--primary-color)] rounded;
+}
+
+span {
+  @apply italic font-light mx-[100px] p-1;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    @apply block;
+  }
+
+  .nav-menu {
+    @apply hidden flex-col bg-[var(--background-color)] absolute top-[90px] right-5 w-[200px] shadow-lg p-2 rounded-lg z-[998];
+  }
+
+  .nav-menu.active {
+    @apply flex;
+  }
+
+  nav ul li a {
+    @apply p-2;
+  }
+
+  nav ul {
+    @apply flex-col gap-2 items-center;
+  }
+
+  .logo {
+    @apply mb-2 mr-0;
+  }
+
+  .titulo-site {
+    @apply text-center;
+  }
+
+  .nav-left {
+    @apply flex-col items-center;
+  }
+
+  .row-information {
+    @apply flex-col;
+  }
+
+  .card-flex {
+    @apply flex-1 w-full;
+  }
+}
+
+.hero {
+  @apply flex items-center justify-between text-left p-10 gap-5 animate-fadeIn opacity-0;
+}
+
+.hero-image {
+  @apply flex-1 max-w-[50%] h-[300px] bg-cover bg-no-repeat rounded-[10px] shadow-md;
+  background-image: url("/barbershop/assets/1.jpg");
+  background-position: center;
+  clip-path: polygon(10% 0%, 100% 0, 90% 100%, 0% 100%);
+}
+
+.btn {
+  @apply mt-5 inline-block bg-[var(--primary-color)] text-white py-5 px-8 rounded font-bold transition-transform duration-300 shadow-md;
+}
+
+.btn:hover {
+  @apply bg-yellow-400 scale-105;
+}
+
+.container {
+  @apply block justify-center items-center px-4 h-full;
+}
+
+.row-information {
+  @apply flex justify-center items-center gap-8 p-6 flex-wrap;
+}
+
+.d-flex-1 {
+  @apply my-6 px-4;
+}
+
+.cards-container {
+  @apply grid gap-4 items-stretch w-full box-border;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.card-flex {
+  @apply bg-[var(--background-color)] p-4 rounded flex flex-col justify-center items-center text-center w-full mb-4 shadow;
+}
+
+.tel-flex {
+  @apply flex flex-col items-center justify-center gap-3 mt-4 pt-4 text-center;
+}
+
+.row {
+  @apply flex flex-wrap justify-between gap-4 bg-[var(--text-color)] p-8 mt-4 rounded w-[90%] max-w-[1200px] shadow-lg box-border;
+}
+
+.table-container {
+  @apply bg-[var(--background-color)] inline-block my-6 px-4 rounded flex-1 min-w-[300px];
+}
+
+.tel-container {
+  @apply my-6 px-4 bg-[var(--background-color)] inline-block rounded;
+}
+
+.table-flex {
+  @apply p-4;
+}
+
+h4 {
+  @apply text-center text-lg;
+}
+
+.table-hours-justify-content-between {
+  @apply flex justify-between;
+}
+
+.btn-ctt {
+  @apply border border-transparent px-2 py-1;
+}
+
+.whatsapp-btn {
+  @apply inline-flex items-center justify-center gap-2 bg-[#25D366] text-white py-2 px-4 rounded font-bold text-sm transition-colors duration-300 w-fit;
+}
+
+.whatsapp-btn:hover {
+  @apply bg-[#1EBE5D];
+}

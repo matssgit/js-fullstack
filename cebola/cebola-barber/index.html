@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/style.css" rel="stylesheet" />
+  </head>
+  <body class="font-inter bg-background text-text">
+    <!-- Navbar -->
+    <header class="flex items-center justify-between p-4 border-b shadow-sm">
+      <div class="flex items-center gap-4">
+        <img
+          src="/assets/cebola.png"
+          alt="Logo"
+          class="w-10 h-10 rounded shadow-gray-800"
+        />
+        <h1 class="text-xl font-bold text-primary">Cebola Barber</h1>
+      </div>
+      <button class="md:hidden text-2xl text-primary" id="menu-button">
+        ☰
+      </button>
+    </header>
+
+    <!-- Mobile Menu -->
+    <nav
+      id="mobile-menu"
+      class="hidden absolute inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75"
+    >
+      <ul class="flex flex-col items-center space-y-4 text-white text-xl">
+        <li><a href="/index.html" class="py-2">Início</a></li>
+        <li><a href="#servicos" class="py-2">Serviços</a></li>
+        <li><a href="#contato" class="py-2">Contato</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section
+      id="home"
+      class="px-10 py-10 flex flex-col items-center text-center bg-cover bg-center"
+      style="background-image: url('./assets/textura-1.jpg')"
+    >
+      <h2 class="text-3xl font-bold mb-4">Faça seu Agendamento</h2>
+      <p class="mb-6 text-lg">Clique abaixo e reserve seu horário</p>
+      <a
+        href="#agendamento"
+        class="bg-amber-400 text-white px-6 py-3 rounded hover:bg-yellow-400 transition-transform"
+      >
+        Agendar Agora!
+      </a>
+      <!-- <div class="w-full h-52 mt-8 bg-gray-800 rounded-lg overflow-hidden">
+        <img
+          src="./assets/1.jpg "
+          alt=""
+          class="w-full h-full rounded object-cover"
+        />
+      </div> -->
+      <!-- Imagens lado a lado para telas grandes (Desktop/Tablet) -->
+      <div class="w-full mt-8 flex flex-col md:flex-row md:gap-4">
+        <div class="w-full md:w-1/2">
+          <img
+            src="./assets/1.jpg"
+            alt="Imagem 1"
+            class="w-full h-full rounded object-cover"
+          />
+        </div>
+        <div class="w-full md:w-1/2">
+          <img
+            src="./assets/2.jpg"
+            alt="Imagem 2"
+            class="w-full h-full rounded object-cover"
+          />
+        </div>
+      </div>
+
+      <!-- Alternância de Imagens no mobile (Auto alternar e Botão) -->
+      <div class="md:hidden w-full mt-8 relative">
+        <div id="image-container" class="w-full h-52">
+          <img
+            id="image-1"
+            src="./assets/1.jpg"
+            alt="Imagem 1"
+            class="w-full h-full rounded object-cover"
+          />
+          <img
+            id="image-2"
+            src="./assets/2.jpg"
+            alt="Imagem 2"
+            class="w-full h-full rounded object-cover hidden"
+          />
+        </div>
+
+        <!-- Botão para alternar manualmente -->
+        <button
+          id="toggle-button"
+          class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-amber-400 text-white px-6 py-3 rounded hover:bg-yellow-400 transition-transform"
+        >
+          Alternar Imagem
+        </button>
+      </div>
+    </section>
+
+    <!-- Seções de Horário e Contato -->
+    <section
+      id="info"
+      class="px-6 py-10 flex flex-col gap-6 md:flex-row md:justify-center bg-cover"
+      style="background-image: url('/assets/fundo2.jpg')"
+    >
+      <!-- Horários -->
+      <div class="bg-neutral-100 shadow-md rounded-lg p-6 text-center md:w-80">
+        <h3 class="text-xl font-semibold mb-4">Horários de Atendimento</h3>
+        <ul class="text-left space-y-2">
+          <li class="flex justify-between">
+            <span>Seg:</span><span>10:00 - 15:00</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Ter:</span><span>09:00 - 18:00</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Qua:</span><span>09:00 - 18:00</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Qui:</span><span>09:00 - 19:00</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Sex:</span><span>10:00 - 21:00</span>
+          </li>
+          <li class="flex justify-between">
+            <span>Sab:</span><span>09:00 - 18:00</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contato -->
+      <div class="bg-neutral-100 shadow-md rounded-lg p-6 text-center md:w-80">
+        <h3 class="text-xl font-semibold mb-4">Contato</h3>
+        <p class="mb-4">(13) 99154-2274</p>
+        <a
+          href="https://wa.me/5513991542274"
+          target="_blank"
+          class="inline-flex items-center gap-2 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
+        >
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+      </div>
+    </section>
+
+    <!-- Referência ao arquivo JavaScript externo -->
+    <script src="./src/script.js"></script>
+  </body>
+</html>
