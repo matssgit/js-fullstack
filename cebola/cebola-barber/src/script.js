@@ -3,16 +3,18 @@ const menuBtn = document.getElementById("menu-button");
 const mobileMenu = document.getElementById("mobile-menu");
 
 menuBtn.addEventListener("click", () => {
-  mobileMenu.classList.toggle("hidden");
+  const isHidden = mobileMenu.classList.toggle("hidden");
+  menuBtn.setAttribute("aria-expanded", !isHidden);
 });
 
 // Fazer a imagem mexer sozinha e sumir no modo mobile.
 let currentImage = 1; // Começamos com a imagem 1 visível
 
-// Alternância automática de imagens a cada 3 segundos
-setInterval(() => {
-  toggleImages();
-}, 3000);
+// Alternância automática de imagens (só inicia uma vez)
+if (!window.imageIntervalStarted) {
+  window.imageIntervalStarted = true;
+  var interval = setInterval(toggleImages, 3000);
+}
 
 // Alternar entre as imagens
 function toggleImages() {
@@ -30,7 +32,8 @@ function toggleImages() {
   }
 }
 
-// Alternar manualmente ao clicar no botão
-document
-  .getElementById("toggle-button")
-  .addEventListener("click", toggleImages);
+// Alternar manualmente ao clicar no botão e parar o automático
+document.getElementById("toggle-button").addEventListener("click", () => {
+  toggleImages();
+  clearInterval(interval);
+});
