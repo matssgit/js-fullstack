@@ -7,8 +7,10 @@
       name="description"
       content="Agende seu corte com estilo na Cebola Barber. Atendimento de qualidade e estilo garantido!"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lobster&family=Staatliches&display=swap"
       rel="stylesheet"
     />
     <link href="./src/style.css" rel="stylesheet" />
@@ -18,9 +20,11 @@
   <body class="font-inter bg-background text-text">
     <!-- Cabeçalho -->
     <header
-      class="top-0 left-0 w-full z-50 bg-gray/50 backdrop-blur-md shadow-md"
+      class="top-0 left-0 w-full z-50 bg-gray/70 bg-opacity-20 backdrop-blur-md shadow-md"
     >
-      <div class="flex justify-between items-center px-6 py-4 relative">
+      <div
+        class="flex justify-between items-center px-6 py-4 relative gradient-nav"
+      >
         <img
           src="/assets/cebola.png"
           alt="Logo da Cebola Barber"
@@ -32,10 +36,7 @@
           <div
             class="whitespace-nowrap animate-marquee text-black text-xl text-center [animation-duration:20s]"
           >
-            <span class="mx-15">💈 Cebola Barber 💈</span>
-            <span class="mx-15">✂️</span>
-            <span class="mx-15">💇🏾‍♂️ Agende seu corte! 💇🏾‍♂️</span>
-            <span class="mx-15">✂️</span>
+            <span class="mx-15 font-2">Cebola Barber</span>
           </div>
         </div>
 
@@ -92,16 +93,16 @@
         <h2
           id="hero-
         title"
-          class="text-3xl font-bold mb-4 text-white"
+          class="text-3xl font-bold mb-4 text-white font-2"
         >
           Faça seu Agendamento
         </h2>
-        <p class="mb-6 text-lg text-white">
+        <p class="mb-6 text-md text-white font-2">
           Clique abaixo e reserve seu horário
         </p>
         <a
           href="#agendamento"
-          class="bg-amber-400 text-white px-6 py-3 rounded hover:bg-yellow-400 transition-transform"
+          class="bg-gray-300 text-black px-7 py-4 rounded hover:bg-gray-100 neon transition-transform font-2"
         >
           Agendar Agora!
         </a>
@@ -117,8 +118,37 @@
           </figure> -->
         </div>
 
+        <!-- Horários -->
+        <article
+          class="border-hours bg-background shadow-md rounded-lg p-10 text-center md:w-100"
+        >
+          <h3 class="text-xl font-semibold mb-4 text-white font-2">
+            Horários de Atendimento
+          </h3>
+          <ul class="text-left space-y-2 text-white font-2">
+            <li class="flex justify-between">
+              <span>Seg:</span><span>10:00 - 15:00</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Ter:</span><span>09:00 - 18:00</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Qua:</span><span>09:00 - 18:00</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Qui:</span><span>09:00 - 19:00</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Sex:</span><span>10:00 - 21:00</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Sab:</span><span>09:00 - 18:00</span>
+            </li>
+          </ul>
+        </article>
+
         <!-- Imagens alternadas no mobile -->
-        <div class="md:hidden w-full mt-8 relative">
+        <div class="md:hidden w-full mt-12 relative">
           <div id="image-container" class="w-full h-52">
             <img
               id="image-1"
@@ -147,37 +177,17 @@
       <section
         id="info"
         class="px-6 py-10 flex flex-col gap-6 md:flex-row md:justify-center bg-cover"
-        style="background-image: url('/assets/fundo2.jpg')"
+        style="
+          background-image: linear-gradient(
+              to bottom,
+              rgb(0, 0, 0),
+              rgba(114, 114, 114, 0.503)
+            ),
+            url('/assets/fundo1.jpg');
+        "
         aria-labelledby="info-title"
       >
         <h2 id="info-title" class="sr-only">Informações da Barbearia</h2>
-
-        <!-- Horários -->
-        <article
-          class="bg-neutral-100 shadow-md rounded-lg p-6 text-center md:w-80"
-        >
-          <h3 class="text-xl font-semibold mb-4">Horários de Atendimento</h3>
-          <ul class="text-left space-y-2">
-            <li class="flex justify-between">
-              <span>Seg:</span><span>10:00 - 15:00</span>
-            </li>
-            <li class="flex justify-between">
-              <span>Ter:</span><span>09:00 - 18:00</span>
-            </li>
-            <li class="flex justify-between">
-              <span>Qua:</span><span>09:00 - 18:00</span>
-            </li>
-            <li class="flex justify-between">
-              <span>Qui:</span><span>09:00 - 19:00</span>
-            </li>
-            <li class="flex justify-between">
-              <span>Sex:</span><span>10:00 - 21:00</span>
-            </li>
-            <li class="flex justify-between">
-              <span>Sab:</span><span>09:00 - 18:00</span>
-            </li>
-          </ul>
-        </article>
 
         <!-- Contato -->
         <article
