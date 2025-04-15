@@ -49,20 +49,20 @@
           ☰
         </button>
       </div>
-    </header>
 
-    <!-- Navegação mobile -->
-    <nav
-      id="mobile-menu"
-      class="hidden fixed inset-0 bg-black bg-opacity-90 z-40 flex items-center justify-center"
-      aria-label="Menu mobile"
-    >
-      <ul class="flex flex-col gap-6 text-white text-2xl text-center">
-        <li><a href="/index.html" class="py-2">Início</a></li>
-        <li><a href="#servicos" class="py-2">Serviços</a></li>
-        <li><a href="#contato" class="py-2">Contato</a></li>
-      </ul>
-    </nav>
+      <!-- Navegação mobile -->
+      <nav
+        id="mobile-menu"
+        class="hidden fixed inset-0 bg-black bg-opacity-90 z-40 flex items-center justify-center"
+        aria-label="Menu mobile"
+      >
+        <ul class="flex flex-col gap-6 text-white text-2xl text-center">
+          <li><a href="/index.html" class="py-2">Início</a></li>
+          <li><a href="#servicos" class="py-2">Serviços</a></li>
+          <li><a href="#contato" class="py-2">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
 
     <!-- Conteúdo principal -->
     <main>
@@ -80,26 +80,23 @@
         "
         aria-labelledby="hero-title"
       >
-        <!-- Logo centralizada -->
         <figure class="w-full md:w-1/2">
           <img
             src="./assets/logo-branca.png"
             alt="Interior da barbearia"
-            class="w-full h-full rounded shadow-gray-800 object-cover drop-shadow-[1px_1px_1px_rgba(255,255,255,0.9)] w-1 neon"
+            class="w-full h-full rounded neon shadow-gray-800 object-cover drop-shadow-[0px_0px_0px_rgba(255,255,255,0.9)]"
           />
         </figure>
 
-        <!-- Mensagem de agendamento -->
-        <h2
-          id="hero-
-        title"
-          class="text-3xl font-bold mb-4 text-white font-2"
-        >
-          Faça seu Agendamento
-        </h2>
-        <p class="mb-6 text-md text-white font-2">
-          Clique abaixo e reserve seu horário
-        </p>
+        <header>
+          <h1 id="hero-title" class="text-3xl font-bold mb-4 text-white font-2">
+            Faça seu Agendamento
+          </h1>
+          <p class="mb-6 text-md text-white font-2">
+            Clique abaixo e reserve seu horário
+          </p>
+        </header>
+
         <a
           href="#agendamento"
           class="bg-gray-300 text-black px-7 py-4 rounded hover:bg-gray-100 neon transition-transform font-2"
@@ -107,24 +104,17 @@
           Agendar Agora!
         </a>
 
-        <!-- Galeria de imagens (desktop/tablet) -->
-        <div class="w-full mt-8 flex flex-col md:flex-row md:gap-4">
-          <!-- <figure class="w-full md:w-1/2">
-            <img
-              src="./assets/1.jpg"
-              alt="Cliente sendo atendido"
-              class="w-full h-full rounded object-cover"
-            />
-          </figure> -->
-        </div>
-
         <!-- Horários -->
-        <article
+        <section
           class="border-hours bg-background shadow-md rounded-lg p-10 text-center md:w-100"
+          aria-labelledby="horarios-title"
         >
-          <h3 class="text-xl font-semibold mb-4 text-white font-2">
+          <h2
+            id="horarios-title"
+            class="text-xl font-semibold mb-4 text-white font-2"
+          >
             Horários de Atendimento
-          </h3>
+          </h2>
           <ul class="text-left space-y-2 text-white font-2">
             <li class="flex justify-between">
               <span>Seg:</span><span>10:00 - 15:00</span>
@@ -145,32 +135,49 @@
               <span>Sab:</span><span>09:00 - 18:00</span>
             </li>
           </ul>
-        </article>
+        </section>
+      </section>
 
-        <!-- Imagens alternadas no mobile -->
-        <div class="md:hidden w-full mt-12 relative">
-          <div id="image-container" class="w-full h-52">
-            <img
-              id="image-1"
-              src="./assets/1.jpg"
-              alt="Imagem da barbearia"
-              class="w-full h-full rounded object-cover"
-            />
-            <img
-              id="image-2"
-              src="./assets/2.jpg"
-              alt="Imagem da barbearia"
-              class="w-full h-full rounded object-cover hidden"
-            />
+      <!-- Sobre / Mensagem -->
+      <section aria-labelledby="sobre-title">
+        <article class="bg-white px-6 py-20">
+          <hr class="space" />
+          <h2 id="sobre-title" class="tt-info">
+            Seu sucesso começa com um bom corte
+          </h2>
+          <p class="font-2 tt-info-2">
+            Com experiência e cuidado, oferecemos cortes de cabelo modernos,
+            barba impecável e atendemos a todas as suas necessidades de estilo.
+            Venha se sentir confiante e renovado em um ambiente acolhedor e
+            profissional.
+          </p>
+
+          <!-- Imagens alternadas no mobile -->
+          <div class="md:hidden w-full mt-12 relative overflow-hidden rounded">
+            <div class="carousel-container">
+              <div id="carousel-track" class="carousel-track">
+                <img
+                  src="./assets/1.jpg"
+                  alt="Imagem 1"
+                  class="carousel-slide"
+                />
+                <img
+                  src="./assets/2.jpg"
+                  alt="Imagem 2"
+                  class="carousel-slide"
+                />
+              </div>
+            </div>
           </div>
-
-          <button
-            id="toggle-button"
-            class="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-amber-400 text-white px-6 py-3 rounded hover:bg-yellow-400 transition-transform"
-          >
-            Alternar Imagem
-          </button>
-        </div>
+          <div>
+            <a
+              href="#agendamento"
+              class="bt-2 bg-black/90 text-white px-7 py-4 rounded hover:bg-black/70 neon transition-transform font-2 bt2-gradient"
+            >
+              Agendar Agora!
+            </a>
+          </div>
+        </article>
       </section>
 
       <!-- Seção de Informações -->

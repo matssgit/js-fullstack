@@ -3,9 +3,9 @@
 
 @keyframes neonGlow {
   0%,
-  10% {
+  100% {
     filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0.6))
-      drop-shadow(8px 8px 8px rgba(255, 255, 255, 0.4));
+      drop-shadow(4px 4px 4px rgba(255, 255, 255, 0.4));
   }
   1% {
     filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0.9))
@@ -14,7 +14,7 @@
 }
 
 .neon {
-  animation: neonGlow 2.5s ease-in-out infinite alternate;
+  animation: neonGlow 1.5s ease-in-out infinite alternate;
 }
 
 .font-1 {
@@ -52,3 +52,60 @@
   border: solid 1px white;
   margin-top: 50px;
 }
+
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.carousel-slide {
+  width: 100%;
+  object-fit: cover;
+}
+
+.hidden {
+  display: none;
+}
+
+.space {
+  margin-top: 0;
+  margin-bottom: 1px;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 400;
+  text-align: center;
+}
+
+.tt-info {
+  font-family: "Cinzel", serif;
+  font-size: xx-large;
+  text-align: center;
+  margin: 30px;
+}
+
+.tt-info-2 {
+  font-size: medium;
+  text-align: center;
+}
+
+.div-with-zero {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.bt-2 {
+  margin: 50px auto 0; /* top = 50px, laterais = auto (centraliza), bottom = 0 */
+  border: 0;
+  width: fit-content;
+  display: block;
+  margin-bottom: 0;
+}
+
+/* .bt2-gradient {
+  background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(32, 32, 32, 0.95));
+} */
