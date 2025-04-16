@@ -1,1 +1,3 @@
-console.log("Tailwind rodando com Vite 🎉");
+import { initHome } from "./script.js";
+
+initHome(); // Executa tudo da home

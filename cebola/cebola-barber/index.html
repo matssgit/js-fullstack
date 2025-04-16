@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br " class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -53,13 +53,14 @@
       <!-- Navegação mobile -->
       <nav
         id="mobile-menu"
-        class="hidden fixed inset-0 bg-black bg-opacity-90 z-40 flex items-center justify-center"
+        class="hidden inset-0 z-50 flex items-center justify-center nav"
         aria-label="Menu mobile"
       >
         <ul class="flex flex-col gap-6 text-white text-2xl text-center">
           <li><a href="/index.html" class="py-2">Início</a></li>
-          <li><a href="#servicos" class="py-2">Serviços</a></li>
-          <li><a href="#contato" class="py-2">Contato</a></li>
+          <li>
+            <a href="#contact" class="py-2 scroll">Contato</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -177,6 +178,23 @@
               Agendar Agora!
             </a>
           </div>
+
+          <!-- Imagens lado a lado só no desktop -->
+          <div
+            id="images-desktop"
+            class="hidden sm:flex justify-center gap-4 mt-8"
+          >
+            <img
+              src="./assets/1.jpg"
+              alt="Imagem 1"
+              class="w-[400px] h-auto rounded-xl shadow-lg"
+            />
+            <img
+              src="./assets/2.jpg"
+              alt="Imagem 2"
+              class="w-[400px] h-auto rounded-xl shadow-lg"
+            />
+          </div>
         </article>
       </section>
 
@@ -188,7 +206,7 @@
           background-image: linear-gradient(
               to bottom,
               rgb(0, 0, 0),
-              rgba(114, 114, 114, 0.503)
+              rgba(0, 0, 0, 0.86)
             ),
             url('/assets/fundo1.jpg');
         "
@@ -198,11 +216,11 @@
 
         <!-- Contato -->
         <article
-          class="bg-neutral-100 shadow-md rounded-lg p-6 text-center md:w-80"
-          id="contato"
+          id="contact"
+          class="border-hours bg-background shadow-md rounded-lg p-10 text-center md:w-100"
         >
-          <h3 class="text-xl font-semibold mb-4">Contato</h3>
-          <p class="mb-4">(13) 99154-2274</p>
+          <h3 class="text-xl font-semibold mb-4 font-2 text-white">Contato</h3>
+          <p class="mb-4 font-2 text-md text-white">(13) 99154-2274</p>
           <a
             href="https://wa.me/5513991542274"
             target="_blank"
@@ -216,5 +234,17 @@
 
     <!-- Scripts -->
     <script src="./src/script.js"></script>
+    <footer class="p-4 bg-gray-800 text-white text-center">
+      <p class="text-sm">
+        &copy; 2025 Cebola Barber. Todos os direitos reservados. Desenvolvido
+        por
+        <a
+          href="https://www.linkedin.com/in/matheus-santana-100b3a69/"
+          target="_blank"
+          class="underline hover:text-gray-300"
+          >Matheus Santana</a
+        >.
+      </p>
+    </footer>
   </body>
 </html>

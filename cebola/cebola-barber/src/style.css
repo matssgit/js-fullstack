@@ -17,6 +17,11 @@
   animation: neonGlow 1.5s ease-in-out infinite alternate;
 }
 
+.nav {
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.761);
+}
+
 .font-1 {
   font-family: "Staatliches", sans-serif;
   font-weight: 400;
@@ -39,13 +44,13 @@
 .gradient-nav {
   background: linear-gradient(
     to bottom,
-    rgb(249, 249, 249),
-    rgba(18, 18, 18, 0.284)
+    rgba(249, 249, 249, 0),
+    rgba(74, 74, 74, 0.36)
   );
 }
 
 .bg-gradient {
-  background: linear-gradient(to up, rgb(3, 3, 3), rgb(255, 255, 255));
+  background: linear-gradient(to top, rgb(3, 3, 3), rgb(255, 255, 255));
 }
 
 .border-hours {
@@ -99,13 +104,42 @@
 }
 
 .bt-2 {
-  margin: 50px auto 0; /* top = 50px, laterais = auto (centraliza), bottom = 0 */
+  margin: 50px auto 0;
+  display: block;
   border: 0;
   width: fit-content;
-  display: block;
-  margin-bottom: 0;
 }
 
 /* .bt2-gradient {
   background: linear-gradient(to bottom, rgb(0, 0, 0), rgba(32, 32, 32, 0.95));
 } */
+
+/* Estilos para telas pequenas (mobile) */
+@media (max-width: 640px) {
+  /* Exibir carrossel e esconder imagens lado a lado */
+  .carousel-container {
+    display: block;
+  }
+
+  #images-desktop {
+    display: none;
+  }
+}
+
+/* Estilos para telas grandes (desktop) */
+@media (min-width: 641px) {
+  /* Exibir imagens lado a lado e esconder o carrossel */
+  .carousel-container {
+    display: none;
+  }
+
+  #images-desktop {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+.scroll {
+  scroll-behavior: smooth;
+}
