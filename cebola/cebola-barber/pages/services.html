@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serviços | Cebola Barber</title>
+    <link rel="stylesheet" href="/styles/services.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Cebola Barber</h1>
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="servicos.html">Serviços</a>
+        <a href="contato.html">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="servicos">
+        <h2>Nossos Serviços</h2>
+
+        <div class="servico-card">
+          <h3>Barba</h3>
+          <p>Navalha, toalha quente e finalização</p>
+          <span>R$ 25,00</span>
+          <button onclick="selecionarServico('Barba')">Agendar</button>
+        </div>
+
+        <div class="servico-card">
+          <h3>Corte + Barba + Sobrancelha</h3>
+          <p>Pacote completo para ficar no estilo</p>
+          <span>R$ 60,00</span>
+          <button onclick="selecionarServico('Combo')">Agendar</button>
+        </div>
+
+        <div class="servico-card">
+          <h3>Corte Masculino</h3>
+          <p>Moderno, degradê ou tradicional</p>
+          <span>R$ 35,00</span>
+          <button onclick="selecionarServico('Corte Masculino')">
+            Agendar
+          </button>
+        </div>
+
+        <div class="servico-card">
+          <h3>Corte + Cavanhaque</h3>
+          <p>Navalha, toalha quente e finalização</p>
+          <span>R$ 55,00</span>
+          <button onclick="selecionarServico('Corte+cavanhaque')">
+            Agendar
+          </button>
+        </div>
+
+        <div class="servico-card">
+          <h3>Corte + Sobrancelha</h3>
+          <p>Pacote completo para ficar no estilo</p>
+          <span>R$ 40,00</span>
+          <button onclick="selecionarServico('Corte+sobrancelha')">
+            Agendar
+          </button>
+        </div>
+
+        <a class="next-btn" href="horarios.html">Horários</a>
+      </section>
+    </main>
+
+    <script src="servicos.js"></script>
+  </body>
+</html>
