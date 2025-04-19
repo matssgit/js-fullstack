@@ -1,70 +1,159 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Serviços | Cebola Barber</title>
-    <link rel="stylesheet" href="/styles/services.css" />
+    <meta
+      name="description"
+      content="Agende seu corte com estilo na Cebola Barber. Atendimento de qualidade e estilo garantido!"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lobster&family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicons/favicon-16x16.png"
+    />
+    <meta name="msapplication-TileColor" content="#ffffff" />
+    <meta name="theme-color" content="#ffffff" />
+    <link href="/styles/services.css" rel="stylesheet" />
+    <title>Cebola Barber | Agende seu corte</title>
   </head>
-  <body>
-    <header>
-      <h1>Cebola Barber</h1>
-      <nav>
-        <a href="index.html">Início</a>
-        <a href="servicos.html">Serviços</a>
-        <a href="contato.html">Contato</a>
+
+  <body class="font-inter bg-background text-text">
+    <!-- Cabeçalho -->
+    <header
+      class="top-0 left-0 w-full z-50 bg-gray/70 bg-opacity-20 backdrop-blur-md shadow-md"
+    >
+      <div
+        class="flex justify-between items-center px-6 py-4 relative gradient-nav"
+      >
+        <img
+          src="/assets/cebola.png"
+          alt="Logo da Cebola Barber"
+          class="w-10 h-10 rounded shadow-gray-800 z-10"
+        />
+
+        <!-- Texto rolando -->
+        <div class="absolute left-0 w-full overflow-hidden pointer-events-none">
+          <div
+            class="whitespace-nowrap animate-marquee text-black text-xl text-center [animation-duration:20s]"
+          >
+            <span class="mx-15 font-2">Cebola Barber</span>
+          </div>
+        </div>
+
+        <!-- Botão menu mobile -->
+        <button
+          id="menu-button"
+          class="md:hidden text-black text-2xl"
+          aria-label="Abrir menu"
+        >
+          ☰
+        </button>
+      </div>
+
+      <!-- Navegação mobile -->
+      <nav
+        id="mobile-menu"
+        class="hidden inset-0 z-50 flex items-center justify-center nav"
+        aria-label="Menu mobile"
+      >
+        <ul class="flex flex-col gap-6 text-white text-2xl text-center">
+          <li><a href="/index.html" class="py-2">Início</a></li>
+          <li><a href="/pages/services.html" class="py-2">Serviços</a></li>
+          <li><a href="#contact" class="py-2 scroll">Contato</a></li>
+        </ul>
       </nav>
     </header>
 
-    <main>
-      <section class="servicos">
-        <h2>Nossos Serviços</h2>
+    <section class="servicos">
+      <h2 class="font-2">Nossos Serviços</h2>
 
-        <div class="servico-card">
+      <div class="servico-card">
+        <div class="info-servico">
           <h3>Barba</h3>
           <p>Navalha, toalha quente e finalização</p>
+        </div>
+        <div class="agendamento-servico">
           <span>R$ 25,00</span>
           <button onclick="selecionarServico('Barba')">Agendar</button>
         </div>
+      </div>
 
-        <div class="servico-card">
+      <div class="servico-card">
+        <div class="info-servico">
           <h3>Corte + Barba + Sobrancelha</h3>
           <p>Pacote completo para ficar no estilo</p>
+        </div>
+        <div class="agendamento-servico">
           <span>R$ 60,00</span>
           <button onclick="selecionarServico('Combo')">Agendar</button>
         </div>
+      </div>
 
-        <div class="servico-card">
+      <div class="servico-card">
+        <div class="info-servico">
           <h3>Corte Masculino</h3>
           <p>Moderno, degradê ou tradicional</p>
+        </div>
+        <div class="agendamento-servico">
           <span>R$ 35,00</span>
           <button onclick="selecionarServico('Corte Masculino')">
             Agendar
           </button>
         </div>
+      </div>
 
-        <div class="servico-card">
+      <div class="servico-card">
+        <div class="info-servico">
           <h3>Corte + Cavanhaque</h3>
           <p>Navalha, toalha quente e finalização</p>
+        </div>
+        <div class="agendamento-servico">
           <span>R$ 55,00</span>
           <button onclick="selecionarServico('Corte+cavanhaque')">
             Agendar
           </button>
         </div>
+      </div>
 
-        <div class="servico-card">
+      <div class="servico-card">
+        <div class="info-servico">
           <h3>Corte + Sobrancelha</h3>
           <p>Pacote completo para ficar no estilo</p>
+        </div>
+        <div class="agendamento-servico">
           <span>R$ 40,00</span>
           <button onclick="selecionarServico('Corte+sobrancelha')">
             Agendar
           </button>
         </div>
+      </div>
+    </section>
 
-        <a class="next-btn" href="horarios.html">Horários</a>
-      </section>
-    </main>
+    <footer
+      class="p-4 bg-gray-800 text-white text-center flex flex-col"
+      role="contentinfo"
+    >
+      <p class="text-sm">
+        &copy; 2025 Cebola Barber. Todos os direitos reservados. Desenvolvido
+        por
+        <a
+          href="https://www.linkedin.com/in/matheus-santana-100b3a69/"
+          target="_blank"
+          class="underline hover:text-gray-300"
+        >
+          Matheus Santana </a
+        >.
+      </p>
+    </footer>
 
-    <script src="servicos.js"></script>
+    <script src="/src/script.js"></script>
   </body>
 </html>

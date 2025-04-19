@@ -1,14 +1,173 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&family=Cinzel&display=swap");
+
+/* ========= FONTES ========= */
+.font-2 {
+  font-family: "Cinzel", serif;
+  font-weight: 400;
+}
+
+/* ========= NAVBAR ========= */
+.nav {
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.761);
+}
+
+.gradient-nav {
+  background: linear-gradient(
+    to bottom,
+    rgba(249, 249, 249, 0),
+    rgba(74, 74, 74, 0.36)
+  );
+}
+
+/* ========= TEXTOS ========= */
+.tt-info {
+  font-family: "Cinzel", serif;
+  font-size: xx-large;
+  text-align: center;
+  margin: 30px;
+}
+
+.tt-info-2 {
+  font-size: medium;
+  text-align: center;
+}
+
+/* ========= BOTÃO CONTINUAR ========= */
+.bt-2 {
+  margin: 50px auto 0;
+  display: block;
+  border: 0;
+  width: fit-content;
+}
+
 .next-btn {
   display: inline-block;
   margin-top: 2rem;
-  background-color: #1e88e5;
-  color: white;
-  padding: 0.8rem 1.5rem;
+  background-color: #000;
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.5rem;
   text-decoration: none;
-  border-radius: 8px;
   font-weight: bold;
+  transition: background 0.3s;
 }
 
 .next-btn:hover {
-  background-color: #1565c0;
+  background-color: #333;
+}
+
+/* ========= SEÇÃO SERVIÇOS ========= */
+div,
+h3,
+p,
+span,
+button {
+  font-family: "Cinzel", serif;
+  font-weight: 400;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+.servicos {
+  padding: 2rem;
+  text-align: center;
+}
+
+.servicos h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.servicos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Para o card crescer melhor na tela desktop */
+.servico-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  margin: 3rem;
+  padding: 3rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.293);
+  gap: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.servico-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-servico {
+  text-align: left;
+}
+
+.info-servico h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.3rem;
+}
+
+.info-servico p {
+  color: #555;
+}
+
+/* ========= AGENDAMENTO ========= */
+.agendamento-servico {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.agendamento-servico span {
+  font-weight: bold;
+  color: #222;
+}
+
+.agendamento-servico button {
+  background-color: #000;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.agendamento-servico button:hover {
+  background-color: #656565;
+}
+
+/* ========= RESPONSIVO ========= */
+@media (max-width: 640px) {
+  .servicos-container {
+    padding: 0 1rem;
+    gap: 1rem;
+  }
+
+  .servico-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    margin: 1rem;
+  }
+
+  .agendamento-servico {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    align-items: flex-end;
+  }
 }
