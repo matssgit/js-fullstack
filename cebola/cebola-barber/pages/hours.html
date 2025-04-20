@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Agende seu corte com estilo na Cebola Barber. Atendimento de qualidade e estilo garantido!"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Incluindo o flatpickr e o idioma pt-br -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/assets/favicons/favicon-16x16.png"
+    />
+    <meta name="theme-color" content="#ffffff" />
+    <link href="/styles/hours.css" rel="stylesheet" />
+    <title>Cebola Barber | Agende seu corte</title>
+  </head>
+
+  <body class="bg-background text-text">
+    <!-- Cabeçalho -->
+    <header class="top-0 left-0 w-full z-50 shadow-md">
+      <div
+        class="flex justify-between items-center px-6 py-4 relative gradient-nav"
+      >
+        <img
+          src="/assets/cebola.png"
+          alt="Logo da Cebola Barber"
+          class="w-10 h-10 rounded shadow-gray-800 z-10"
+        />
+
+        <!-- Texto rolando -->
+        <div class="absolute left-0 w-full overflow-hidden pointer-events-none">
+          <div
+            class="whitespace-nowrap animate-marquee text-black text-xl text-center [animation-duration:20s]"
+          >
+            <span class="mx-15 font-2">Cebola Barber</span>
+          </div>
+        </div>
+
+        <!-- Botão menu mobile -->
+        <button
+          id="menu-button"
+          class="md:hidden text-black text-2xl"
+          aria-label="Abrir menu"
+        >
+          ☰
+        </button>
+      </div>
+
+      <!-- Navegação mobile -->
+      <nav
+        id="mobile-menu"
+        class="hidden inset-0 z-50 flex items-center justify-center nav"
+        aria-label="Menu mobile"
+      >
+        <ul class="flex flex-col gap-6 text-white text-2xl text-center">
+          <li><a href="/index.html" class="py-2">Início</a></li>
+          <li><a href="/pages/services.html" class="py-2">Serviços</a></li>
+          <li><a href="#contact" class="py-2 scroll">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main
+      class="max-w-xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md font-2"
+    >
+      <h2 class="text-2xl font-bold mb-4">Resumo do Serviço</h2>
+      <p class="text-lg">
+        <strong>Tipo:</strong> <span id="type-court">...</span>
+      </p>
+      <p class="text-lg mb-6">
+        <strong>Valor:</strong> <span id="value-court">...</span>
+      </p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Escolha a data</h3>
+      <input
+        type="date"
+        id="data"
+        class="w-full p-2 border rounded-md mb-4 font-2"
+      />
+
+      <h3 class="text-xl font-semibold mb-2">Escolha o horário</h3>
+      <!-- Campo de Horário -->
+      <select id="horario" class="w-full p-2 border rounded-md mb-6 font-2">
+        <option value="">Selecione</option>
+        <option value="09:00">09:00</option>
+        <option value="10:00">10:00</option>
+        <option value="11:00">11:00</option>
+        <option value="13:00">13:00</option>
+        <option value="14:00">14:00</option>
+        <option value="15:00">15:00</option>
+        <option value="16:00">16:00</option>
+        <option value="17:00">17:00</option>
+      </select>
+      <button
+        onclick="confirmarAgendamento()"
+        class="bt-2 next-btn w-full text-center"
+      >
+        Confirmar Agendamento
+      </button>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+    <!-- Aqui -->
+    <script src="/scripts/hours.js"></script>
+  </body>
+</html>

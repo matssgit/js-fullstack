@@ -85,7 +85,7 @@ h3 {
 
 .servicos-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -95,15 +95,16 @@ h3 {
 /* Para o card crescer melhor na tela desktop */
 .servico-card {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   background: #fff;
-  margin: 3rem;
-  padding: 3rem;
+  margin: 1rem;
+  padding: 2rem;
   border-radius: 1rem;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.293);
   gap: 1rem;
   transition: transform 0.2s ease;
+  width: 80%; /* Ajuste para limitar a largura dos cards */
 }
 
 .servico-card:hover {
@@ -158,10 +159,9 @@ h3 {
   }
 
   .servico-card {
-    flex-direction: column;
-    align-items: flex-start;
     padding: 2rem;
     margin: 1rem;
+    width: 100%; /* Card ocupar 100% da largura em telas pequenas */
   }
 
   .agendamento-servico {
@@ -170,4 +170,25 @@ h3 {
     width: 100%;
     align-items: flex-end;
   }
+}
+
+/* ========= GARANTIR QUE O FOOTER FIQUE NO FINAL DA PÁGINA ========= */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Garante que o body ocupe 100% da altura da tela */
+  margin: 0;
+}
+
+.main-content {
+  flex-grow: 1; /* Faz o contme maeúdo principal crescer e ocupar o espaço disponível */
+}
+
+/* Ajuste para o footer */
+footer {
+  margin-top: auto; /* Empurra o footer para o final da página */
+  padding: 20px;
+  background-color: #3d3d3df9; /* Cor de fundo para o footer */
+  color: #fff;
+  text-align: center;
 }

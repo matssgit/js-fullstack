@@ -7,9 +7,21 @@ menuBtn.onclick = () => {
   menuBtn.setAttribute("aria-expanded", !hidden);
 };
 
-// Função de agendamento (aqui você pode adaptar para integração futura)
-function selecionarServico(servico) {
-  alert(
-    `Você selecionou o serviço: ${servico}. Em breve o agendamento estará disponível!`
-  );
-}
+// Captura todos os botões de agendamento
+const scheduleButtons = document.querySelectorAll(".btn-schedule");
+
+scheduleButtons.forEach((btn) => {
+  btn.addEventListener("click", function () {
+    const serviceCard = this.closest(".servico-card");
+
+    const type = serviceCard.querySelector("h3").textContent.trim();
+    const priceText = serviceCard.querySelector(".price").textContent.trim();
+
+    const value = priceText.replace("R$", "").replace(",", ".").trim();
+
+    localStorage.setItem("serviceType", type);
+    localStorage.setItem("serviceValue", value);
+
+    location.href = "hours.html";
+  });
+});

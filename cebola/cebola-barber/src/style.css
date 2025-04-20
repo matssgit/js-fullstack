@@ -143,3 +143,12 @@
 .scroll {
   scroll-behavior: smooth;
 }
+
+/* Ajuste para o footer */
+footer {
+  margin-top: auto; /* Empurra o footer para o final da página */
+  padding: 20px;
+  background-color: #3d3d3df9; /* Cor de fundo para o footer */
+  color: #fff;
+  text-align: center;
+}

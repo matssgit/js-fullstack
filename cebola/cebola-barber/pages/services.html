@@ -25,7 +25,17 @@
     <title>Cebola Barber | Agende seu corte</title>
   </head>
 
-  <body class="font-inter bg-background text-text">
+  <body
+    class="font-inter bg-background text-text bg-cover"
+    style="
+      background-image: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.592),
+          rgba(252, 250, 250, 0.622)
+        ),
+        url('/assets/textura-1.jpg');
+    "
+  >
     <!-- Cabeçalho -->
     <header
       class="top-0 left-0 w-full z-50 bg-gray/70 bg-opacity-20 backdrop-blur-md shadow-md"
@@ -75,64 +85,56 @@
     <section class="servicos">
       <h2 class="font-2">Nossos Serviços</h2>
 
-      <div class="servico-card">
-        <div class="info-servico">
-          <h3>Barba</h3>
-          <p>Navalha, toalha quente e finalização</p>
+      <div class="servicos-container">
+        <div class="servico-card">
+          <div class="info-servico">
+            <h3>Barba</h3>
+            <p>Navalha, toalha quente e finalização</p>
+          </div>
+          <div class="agendamento-servico">
+            <span class="price">R$ 25,00</span>
+            <button class="btn-schedule">Agendar</button>
+          </div>
         </div>
-        <div class="agendamento-servico">
-          <span>R$ 25,00</span>
-          <button onclick="selecionarServico('Barba')">Agendar</button>
+        <div class="servico-card">
+          <div class="info-servico">
+            <h3>Corte + Barba + Sobrancelha</h3>
+            <p>Pacote completo para ficar no estilo</p>
+          </div>
+          <div class="agendamento-servico">
+            <span class="price">R$ 60,00</span>
+            <button class="btn-schedule">Agendar</button>
+          </div>
         </div>
-      </div>
-
-      <div class="servico-card">
-        <div class="info-servico">
-          <h3>Corte + Barba + Sobrancelha</h3>
-          <p>Pacote completo para ficar no estilo</p>
+        <div class="servico-card">
+          <div class="info-servico">
+            <h3>Corte Masculino</h3>
+            <p>Moderno, degradê ou tradicional</p>
+          </div>
+          <div class="agendamento-servico">
+            <span class="price">R$ 35,00</span>
+            <button class="btn-schedule">Agendar</button>
+          </div>
         </div>
-        <div class="agendamento-servico">
-          <span>R$ 60,00</span>
-          <button onclick="selecionarServico('Combo')">Agendar</button>
+        <div class="servico-card">
+          <div class="info-servico">
+            <h3>Corte + Cavanhaque</h3>
+            <p>Navalha, toalha quente e finalização</p>
+          </div>
+          <div class="agendamento-servico">
+            <span class="price">R$ 55,00</span>
+            <button class="btn-schedule">Agendar</button>
+          </div>
         </div>
-      </div>
-
-      <div class="servico-card">
-        <div class="info-servico">
-          <h3>Corte Masculino</h3>
-          <p>Moderno, degradê ou tradicional</p>
-        </div>
-        <div class="agendamento-servico">
-          <span>R$ 35,00</span>
-          <button onclick="selecionarServico('Corte Masculino')">
-            Agendar
-          </button>
-        </div>
-      </div>
-
-      <div class="servico-card">
-        <div class="info-servico">
-          <h3>Corte + Cavanhaque</h3>
-          <p>Navalha, toalha quente e finalização</p>
-        </div>
-        <div class="agendamento-servico">
-          <span>R$ 55,00</span>
-          <button onclick="selecionarServico('Corte+cavanhaque')">
-            Agendar
-          </button>
-        </div>
-      </div>
-
-      <div class="servico-card">
-        <div class="info-servico">
-          <h3>Corte + Sobrancelha</h3>
-          <p>Pacote completo para ficar no estilo</p>
-        </div>
-        <div class="agendamento-servico">
-          <span>R$ 40,00</span>
-          <button onclick="selecionarServico('Corte+sobrancelha')">
-            Agendar
-          </button>
+        <div class="servico-card">
+          <div class="info-servico">
+            <h3>Corte + Sobrancelha</h3>
+            <p>Pacote completo para ficar no estilo</p>
+          </div>
+          <div class="agendamento-servico">
+            <span>R$ 40,00</span>
+            <button class="btn-schedule">Agendar</button>
+          </div>
         </div>
       </div>
     </section>
@@ -154,6 +156,6 @@
       </p>
     </footer>
 
-    <script src="/src/script.js"></script>
+    <script src="/scripts/services.js"></script>
   </body>
 </html>
