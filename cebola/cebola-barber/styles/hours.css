@@ -1,6 +1,31 @@
 @import "tailwindcss";
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&family=Cinzel&display=swap");
 
+body {
+  background: linear-gradient(
+    linear-gradient(rgba(0, 0, 0, 0.592), rgba(252, 250, 250, 0.622))
+  );
+}
+
+/* ========= NAVBAR ========= */
+.nav {
+  padding: 30px;
+  background-color: rgba(0, 0, 0, 0.761);
+}
+
+.gradient-nav {
+  background: linear-gradient(
+    to bottom,
+    rgba(249, 249, 249, 0),
+    rgba(74, 74, 74, 0.36)
+  );
+}
+
+main {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.81);
+  display: block;
+}
+
 /* ========= FONTES ========= */
 .font-2 {
   font-family: "Cinzel", serif;
@@ -51,7 +76,7 @@
   padding: 2rem;
   background-color: #f9f9f9;
   border-radius: 1rem;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.81);
   font-family: "Cinzel", serif;
 }
 
@@ -73,6 +98,17 @@
   transition: border-color 0.3s ease;
 }
 
+label {
+  display: block;
+  margin: 1rem 0 1rem 0;
+}
+
+input {
+  border: solid 1px;
+  border-radius: 3px;
+  padding: 0.5rem;
+  width: 100%;
+}
 .form-container input:focus {
   border-color: #000;
   outline: none;

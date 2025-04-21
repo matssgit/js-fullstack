@@ -29,9 +29,14 @@
     <title>Cebola Barber | Agende seu corte</title>
   </head>
 
-  <body class="bg-background text-text">
+  <body
+    class="font-inter bg-background text-text"
+    style="background-image: url('/assets/textura-1.jpg')"
+  >
     <!-- Cabeçalho -->
-    <header class="top-0 left-0 w-full z-50 shadow-md">
+    <header
+      class="top-0 left-0 w-full z-50 bg-gray/70 bg-opacity-20 backdrop-blur-md shadow-md"
+    >
       <div
         class="flex justify-between items-center px-6 py-4 relative gradient-nav"
       >
@@ -80,22 +85,28 @@
     >
       <h2 class="text-2xl font-bold mb-4">Resumo do Serviço</h2>
       <p class="text-lg">
-        <strong>Tipo:</strong> <span id="type-court">...</span>
+        <strong class="text-400">Tipo:</strong>
+        <span id="type-court">...</span>
       </p>
       <p class="text-lg mb-6">
         <strong>Valor:</strong> <span id="value-court">...</span>
       </p>
-
       <h3 class="text-xl font-semibold mt-6 mb-2">Escolha a data</h3>
+
       <input
         type="date"
         id="data"
         class="w-full p-2 border rounded-md mb-4 font-2"
+        placeholder="Clique aqui para escolher a data"
+        required
       />
-
       <h3 class="text-xl font-semibold mb-2">Escolha o horário</h3>
       <!-- Campo de Horário -->
-      <select id="horario" class="w-full p-2 border rounded-md mb-6 font-2">
+      <select
+        id="horario"
+        class="w-full p-2 border rounded-md mb-6 font-2"
+        required
+      >
         <option value="">Selecione</option>
         <option value="09:00">09:00</option>
         <option value="10:00">10:00</option>
@@ -106,6 +117,24 @@
         <option value="16:00">16:00</option>
         <option value="17:00">17:00</option>
       </select>
+
+      <form id="client-form">
+        <label class="text-xl font-semibold mb-2">Nome ou apelido:</label>
+        <input
+          type="text"
+          id="client-name"
+          placeholder="Digite seu nome"
+          required
+        />
+
+        <label class="text-xl font-semibold mb-2">Telefone (WhatsApp):</label>
+        <input
+          type="tel"
+          id="client-phone"
+          placeholder="digite seu whatsapp"
+          required
+        />
+      </form>
       <button
         onclick="confirmarAgendamento()"
         class="bt-2 next-btn w-full text-center"
