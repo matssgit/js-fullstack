@@ -11,11 +11,19 @@ app.use(express.json());
 
 const availabilityPath = path.join(__dirname, "data", "availability.json");
 
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Permitir requisições do Vite
+  })
+);
+
 // Salvar novo agendamento
 app.post("/agendar", (req, res) => {
-  const { date, hour, nome, telefone, tipo, valor } = req.body;
+  const { date, hour, name, telephone, type, price } = req.body;
 
-  if (!date || !hour || !nome || !telefone) {
+  console.log("Dados recebidos no agendamento:", req.body); // Adicione isso para ver os dados recebidos
+
+  if (!date || !hour || !name || !telephone) {
     return res
       .status(400)
       .json({ message: "Dados incompletos para agendamento." });
@@ -54,7 +62,7 @@ app.post("/agendar", (req, res) => {
         }
 
         console.log(
-          `Novo agendamento: ${nome} (${telefone}) às ${hour} em ${date} | ${tipo} - ${valor}`
+          `Novo agendamento: ${name} (${telephone}) às ${hour} em ${date} | ${type} - ${price}`
         );
 
         res.status(200).json({ message: "Agendamento realizado com sucesso." });

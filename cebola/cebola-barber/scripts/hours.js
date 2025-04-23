@@ -7,12 +7,12 @@ menuBtn.onclick = () => {
   menuBtn.setAttribute("aria-expanded", !hidden);
 };
 
-// ========== EXIBE TIPO E VALOR DO SERVIÇO ==========
+// ========== EXIBE type E value DO SERVIÇO ==========
 document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("type-court").textContent =
-    localStorage.getItem("tipoServico") || "Corte";
+    localStorage.getItem("serviceType") || "Corte";
   document.getElementById("value-court").textContent =
-    localStorage.getItem("valorServico") || "R$ 0,00";
+    localStorage.getItem("serviceValue") || "R$ 0,00";
 });
 
 // ========== CONFIGURAÇÃO DO FLATPICKR ==========
@@ -35,10 +35,10 @@ document.getElementById("data").addEventListener("change", async (e) => {
   const select = document.getElementById("horario");
 
   // Converter data para formato yyyy-mm-dd (usado no backend)
-  const [dia, mes, ano] = dataInput.split("/");
-  const dataFormatada = `${ano}-${mes}-${dia}`;
+  const [day, month, year] = dataInput.split("/");
+  const dataFormat = `${year}-${month}-${day}`;
 
-  const horariosFixos = [
+  const fixedHours = [
     "09:00",
     "10:00",
     "11:00",
@@ -49,28 +49,28 @@ document.getElementById("data").addEventListener("change", async (e) => {
     "17:00",
   ];
 
-  // Limpa os horários atuais
-  select.innerHTML = '<option value="">Selecione</option>';
+  // // Limpa os horários atuais
+  // select.innerHTML = '<option value="">Selecione</option>';
 
   try {
     const response = await fetch(
-      `http://localhost:3000/disponibilidade/${dataFormatada}`
+      `http://localhost:3000/disponibilidade/${dataFormat}`
     );
 
-    const { ocupados } = await response.json();
+    const { busy } = await response.json();
 
-    const disponiveis = horariosFixos.filter((h) => !ocupados.includes(h));
+    const available = fixedHours.filter((h) => !busy.includes(h));
 
-    if (disponiveis.length === 0) {
+    if (available.length === 0) {
       const option = document.createElement("option");
       option.textContent = "Sem horários disponíveis";
       option.disabled = true;
       select.appendChild(option);
     } else {
-      disponiveis.forEach((hora) => {
+      available.forEach((hour) => {
         const option = document.createElement("option");
-        option.value = hora;
-        option.textContent = hora;
+        option.value = hour;
+        option.textContent = hour;
         select.appendChild(option);
       });
     }
@@ -85,33 +85,33 @@ document.getElementById("data").addEventListener("change", async (e) => {
 
 // ========== CONFIRMA E ENVIA AGENDAMENTO ==========
 async function confirmarAgendamento() {
-  const nome = document.getElementById("client-name").value.trim();
-  const telefone = document.getElementById("client-phone").value.trim();
+  const name = document.getElementById("client-name").value.trim();
+  const telephone = document.getElementById("client-phone").value.trim();
   const dataInput = document.getElementById("data").value;
-  const hora = document.getElementById("horario").value;
-  const tipo = localStorage.getItem("tipoServico") || "Corte";
-  const valor = localStorage.getItem("valorServico") || "R$ 0,00";
+  const hour = document.getElementById("horario").value;
+  const type = localStorage.getItem("serviceType") || "Corte";
+  const value = localStorage.getItem("serviceValue") || "R$ 0,00";
 
-  if (!nome || !telefone || !dataInput || !hora) {
+  if (!name || !telephone || !dataInput || !hour) {
     alert("Preencha todos os campos!");
     return;
   }
 
   // Converter data para yyyy-mm-dd para salvar no backend
-  const [dia, mes, ano] = dataInput.split("/");
-  const dataFormatada = `${ano}-${mes}-${dia}`;
+  const [day, month, year] = dataInput.split("/");
+  const dataFormat = `${year}-${month}-${day}`;
 
   try {
     const response = await fetch("http://localhost:3000/agendar", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        nome,
-        telefone,
-        date: dataFormatada,
-        hour: hora,
-        tipo,
-        valor,
+        name,
+        telephone,
+        date: dataFormat,
+        hour: hour,
+        type,
+        value,
       }),
     });
 
