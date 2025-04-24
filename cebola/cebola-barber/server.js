@@ -19,6 +19,7 @@ app.use(
 
 // Salvar novo agendamento
 app.post("/agendar", (req, res) => {
+  console.log("Requisição recebida para /agendar");
   const { date, hour, name, telephone, type, price } = req.body;
 
   console.log("Dados recebidos no agendamento:", req.body); // Adicione isso para ver os dados recebidos

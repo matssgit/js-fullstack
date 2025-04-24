@@ -31,10 +31,7 @@ flatpickr("#horario", {
 
 // ========== ATUALIZA HORÁRIOS DISPONÍVEIS ==========
 document.getElementById("data").addEventListener("change", async (e) => {
-  const dataInput = e.target.value;
-  const select = document.getElementById("horario");
-
-  // Converter data para formato yyyy-mm-dd (usado no backend)
+  const dataInput = e.target.value; // vem em d/m/Y por causa do flatpickr
   const [day, month, year] = dataInput.split("/");
   const dataFormat = `${year}-${month}-${day}`;
 
@@ -49,8 +46,7 @@ document.getElementById("data").addEventListener("change", async (e) => {
     "17:00",
   ];
 
-  // // Limpa os horários atuais
-  // select.innerHTML = '<option value="">Selecione</option>';
+  select.innerHTML = '<option value="">Selecione</option>';
 
   try {
     const response = await fetch(
@@ -58,7 +54,6 @@ document.getElementById("data").addEventListener("change", async (e) => {
     );
 
     const { busy } = await response.json();
-
     const available = fixedHours.filter((h) => !busy.includes(h));
 
     if (available.length === 0) {
