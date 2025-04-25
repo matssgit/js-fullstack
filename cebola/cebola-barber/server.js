@@ -20,11 +20,11 @@ app.use(
 // Salvar novo agendamento
 app.post("/agendar", (req, res) => {
   console.log("Requisição recebida para /agendar");
+  console.log("Corpo da requisição:", req.body);
+
   const { date, hour, name, telephone, type, price } = req.body;
 
-  console.log("Dados recebidos no agendamento:", req.body); // Adicione isso para ver os dados recebidos
-
-  if (!date || !hour || !name || !telephone) {
+  if (!date || !hour || !name || !telephone || !type || !price) {
     return res
       .status(400)
       .json({ message: "Dados incompletos para agendamento." });
@@ -46,11 +46,21 @@ app.post("/agendar", (req, res) => {
       availability[date] = [];
     }
 
-    if (availability[date].includes(hour)) {
+    // Verifica se já existe um agendamento nesse horário
+    const isHourTaken = availability[date].some((a) => a.hour === hour);
+
+    if (isHourTaken) {
       return res.status(400).json({ message: "Horário já reservado." });
     }
 
-    availability[date].push(hour);
+    // Adiciona novo agendamento
+    availability[date].push({
+      hour,
+      name,
+      telephone,
+      type,
+      price,
+    });
 
     fs.writeFile(
       availabilityPath,
@@ -63,10 +73,10 @@ app.post("/agendar", (req, res) => {
         }
 
         console.log(
-          `Novo agendamento: ${name} (${telephone}) às ${hour} em ${date} | ${type} - ${price}`
+          `✅ Novo agendamento: ${name} (${telephone}) às ${hour} em ${date} | ${type} - ${price}`
         );
 
-        res.status(200).json({ message: "Agendamento realizado com sucesso." });
+        res.status(200).json({ message: "Agendamento realizado com sucesso!" });
       }
     );
   });
@@ -88,7 +98,7 @@ app.get("/disponibilidade/:date", (req, res) => {
         .json({ message: "Erro ao processar os dados de disponibilidade." });
     }
 
-    const ocupados = availability[date] || [];
+    const ocupados = (availability[date] || []).map((a) => a.hour);
     res.status(200).json({ ocupados });
   });
 });

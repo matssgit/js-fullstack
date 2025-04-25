@@ -106,7 +106,7 @@ async function confirmarAgendamento() {
         date: dataFormat,
         hour: hour,
         type,
-        value,
+        price: value,
       }),
     });
 
