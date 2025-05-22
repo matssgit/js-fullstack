@@ -1,22 +1,22 @@
+import Input from "./Input";
+
 import { useState } from "react";
 
 function AddTask({ onAddTaskSubmit }) {
-  const [title, setTitle] = useState("123211222");
+  const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   // console.log({ title, description });
   return (
     <div className="space-y-4 p-6 bg-slate-200 rounded-md shadow flex flex-col">
-      <input
+      <Input
         type="text"
         placeholder="Digite o título da tarefa"
-        className="border border-slate-300 outline-slate-400 px-4 py-2 rounded-md"
         value={title}
         onChange={(ev) => setTitle(ev.target.value)}
       />
-      <input
+      <Input
         type="text"
         placeholder="Digite a descrição da tarefa"
-        className="border border-slate-300 outline-slate-400 px-4 py-2 rounded-md"
         value={description}
         onChange={(ev) => setDescription(ev.target.value)}
       />
